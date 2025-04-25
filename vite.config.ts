@@ -11,6 +11,7 @@ export default defineConfig({
         if (chunk.fileName === "index.js") {
           const banner = `/*!
           `;
+          return banner + chunk.code;
         }
       },
     }),
