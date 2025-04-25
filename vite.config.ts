@@ -16,14 +16,14 @@ export default defineConfig({
     //   content: resolve(__dirname, "src/banner.js"),
     // }),
   ],
-  // // no hash in build
-  // build: {
-  //   rollupOptions: {
-  //     output: {
-  //       entryFileNames: "index.js",
-  //       chunkFileNames: "index.js",
-  //       assetFileNames: "[name][extname]",
-  //     },
-  //   },
-  // },
+  // no hash in build
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: "index.js",
+        chunkFileNames: "index.js",
+        assetFileNames: "[name][extname]",
+      },
+    },
+  },
 });
