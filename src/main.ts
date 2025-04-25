@@ -1,15 +1,4 @@
-// ==UserScript==
-// @name         Github test
-// @namespace    http://tampermonkey.net/
-// @version      2025-04-25
-// @description  try to take over the world!
-// @author       You
-// @match        https://github.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
-// @grant        none
-// ==/UserScript==
-
-import "./styles.scss";
+import styles from "./styles.scss?raw";
 
 const getStatus = () => {
   if (document.querySelector(".gh-header-meta [title='Status: Merged']"))
@@ -92,10 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// insert a link to css to head
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href =
-  "https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.css";
-link.type = "text/css";
-document.head.appendChild(link);
+// insert a style
+const style = document.createElement("style");
+style.innerHTML = styles;
+document.head.appendChild(style);
