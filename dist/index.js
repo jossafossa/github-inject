@@ -1,2 +1,2 @@
 /*!
-          undefined
+          [object Object]
