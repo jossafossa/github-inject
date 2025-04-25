@@ -1,9 +1,6 @@
 // vite config
 import { defineConfig } from "vite";
-// import banner2 from "rollup-plugin-banner2";
-import { resolve } from "path";
 import edit from "rollup-plugin-edit";
-import { readFileSync } from "fs";
 import { getBanner } from "./src/banner.js";
 
 export default defineConfig({
@@ -11,9 +8,9 @@ export default defineConfig({
     edit({
       chunk: (chunk) => {
         if (chunk.fileName === "index.js") {
-          // read the content of the file
           return getBanner() + chunk.contents;
         }
+        return chunk.contents;
       },
     }),
   ],
