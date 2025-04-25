@@ -80,3 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
       anchor.parentNode?.appendChild(copyLink);
     });
 });
+
+// insert a link to css to head
+const link = document.createElement("link");
+link.rel = "stylesheet";
+link.href =
+  "https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.css";
+link.type = "text/css";
+document.head.appendChild(link);
