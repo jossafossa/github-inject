@@ -11,13 +11,8 @@ export default defineConfig({
     edit({
       chunk: (chunk) => {
         if (chunk.fileName === "index.js") {
-          // get the banner content from src/banner.js
-          const banner = readFileSync(
-            resolve(__dirname, "src/banner.js"),
-            "utf8"
-          );
           // read the content of the file
-          return banner + chunk.contents;
+          return getBanner() + chunk.contents;
         }
       },
     }),
