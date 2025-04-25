@@ -9,6 +9,7 @@ export default defineConfig({
     edit({
       chunk: (chunk) => {
         if (chunk.fileName === "index.js") {
+          // get the banner content from src/banner.js
           const banner = resolve(__dirname, "src/banner.js");
           return banner + chunk.contents;
         }
