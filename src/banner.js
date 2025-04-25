@@ -1,7 +1,8 @@
-export const getBanner = () => `// ==UserScript==
+export const getBanner = () => `
+// ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      2025-04-25
+// @version      ${Date.now()}
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -9,6 +10,8 @@ export const getBanner = () => `// ==UserScript==
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.js
 // @updateURL    https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.js
+// ==/UserScript==
+
 // ==/UserScript==
 
 `;
