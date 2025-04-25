@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import edit from "rollup-plugin-edit";
 import { readFileSync } from "fs";
+import { getBanner } from "./src/banner.js";
 
 export default defineConfig({
   plugins: [
