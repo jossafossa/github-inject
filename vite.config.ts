@@ -12,9 +12,6 @@ export default defineConfig({
      */
     `
     ),
-    // banner({
-    //   content: resolve(__dirname, "src/banner.js"),
-    // }),
   ],
   // no hash in build
   build: {
