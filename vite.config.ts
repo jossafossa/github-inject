@@ -21,7 +21,7 @@ export default defineConfig({
 // @grant        none
 // ==/UserScript==
 `;
-          return banner + chunk.output;
+          return banner + chunk.contents;
         }
       },
     }),
