@@ -1,5 +1,4 @@
-export const getBanner = () => `
-// ==UserScript==
+export const getBanner = () => `// ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
 // @version      ${Date.now()}
