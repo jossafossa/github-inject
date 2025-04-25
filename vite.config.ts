@@ -1,4 +1,3 @@
-// vite config
 import { defineConfig } from "vite";
 import edit from "rollup-plugin-edit";
 import { getBanner } from "./src/banner.js";
@@ -14,7 +13,6 @@ export default defineConfig({
       },
     }),
   ],
-  // no hash in build
   build: {
     rollupOptions: {
       output: {
