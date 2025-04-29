@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1745927781996
+// @version      1745927786790
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -11,7 +11,7 @@
 // @updateURL    https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.js
 // ==/UserScript==
 
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function r(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(e){if(e.ep)return;e.ep=!0;const o=r(e);fetch(e.href,o)}})();const d=`/*
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function r(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(e){if(e.ep)return;e.ep=!0;const o=r(e);fetch(e.href,o)}})();const c=`/*
 Comments:
 - outline:red = not responded
 - outline:orange = responded
@@ -75,7 +75,7 @@ page:
 }
 
 .review-thread-component[data-resolved="true"] {
-  --comment-outline-color
+  --comment-outline-color: var(--f-green-border);
 }
 
 /* 
@@ -201,4 +201,4 @@ body:has(
 }
 `,l=()=>document.querySelector(".gh-header-meta [title='Status: Merged']")?"merged":document.querySelector("[reviewable_state='draft']")?"draft":document.querySelector("[data-name*='QA-Test'], [data-name*='qa-test']")?"test":!1;let s=!1;const m=setInterval(()=>{const n=l();if(s!==n&&n){const t=`[${n.toUpperCase()}]`;s=!!n;const r=document.querySelector("h1 > bdi");r&&(r.innerHTML=`${t} ${r.innerHTML}`),document.title=`${t} ${document.title}`,clearInterval(m)}},100);function h(){const n=document.createElement("input");n.type="checkbox",n.id="lock-merge",document.body.appendChild(n),localStorage.getItem("checkboxState")==="checked"&&(n.checked=!0),n.addEventListener("change",()=>{localStorage.setItem("checkboxState",n.checked?"checked":"unchecked")})}document.addEventListener("click",()=>{document.querySelector("#lock-merge")||h()});document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("details-collapsible summary a").forEach(n=>{var r;let t=document.createElement("span");t.innerHTML=`<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy">
     <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>`,t.style.marginLeft="10px",t.style.cursor="pointer",t.style.textDecoration="underline",t.addEventListener("click",function(a){a.preventDefault(),navigator.clipboard.writeText(n.textContent??"").then(()=>{console.log("Copied: "+n.textContent)}).catch(e=>{console.error("Failed to copy: ",e)})}),(r=n.parentNode)==null||r.appendChild(t)})});const c=document.createElement("style");c.innerHTML=d;document.head.appendChild(c);
+</svg>`,t.style.marginLeft="10px",t.style.cursor="pointer",t.style.textDecoration="underline",t.addEventListener("click",function(a){a.preventDefault(),navigator.clipboard.writeText(n.textContent??"").then(()=>{console.log("Copied: "+n.textContent)}).catch(e=>{console.error("Failed to copy: ",e)})}),(r=n.parentNode)==null||r.appendChild(t)})});const d=document.createElement("style");d.innerHTML=c;document.head.appendChild(d);

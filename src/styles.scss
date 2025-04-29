@@ -62,7 +62,7 @@ page:
 }
 
 .review-thread-component[data-resolved="true"] {
-  --comment-outline-color
+  --comment-outline-color: var(--f-green-border);
 }
 
 /* 
