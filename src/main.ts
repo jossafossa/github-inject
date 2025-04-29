@@ -103,6 +103,7 @@ const getElement = async (selector: string): Promise<Element> => {
   const messages = await getElement(
     ".partial-pull-merging-analytics-js section + div"
   );
+  console.log({ messages });
   if (!messages) return;
 
   const message = document.createElement("a");
