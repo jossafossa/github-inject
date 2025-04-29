@@ -93,4 +93,4 @@ setTimeout(() => {
     "https://github.com/simplicate-software/frontend/actions?query=actor:joosthobmasimplicate";
 
   document.body.append(iframe);
-});
+}, 1000);
