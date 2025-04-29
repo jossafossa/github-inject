@@ -87,10 +87,17 @@ style.innerHTML = styles;
 document.head.appendChild(style);
 
 setTimeout(() => {
-  const iframe = document.createElement("iframe");
+  const messages = document.querySelector(
+    ".partial-pull-merging-analytics-js section + div"
+  );
+  if (!messages) return;
 
-  iframe.src =
+  const message = document.createElement("a");
+
+  message.href =
     "https://github.com/simplicate-software/frontend/actions?query=actor:joosthobmasimplicate";
 
-  document.body.append(iframe);
+  message.innerText = "Actions of this PR";
+
+  messages.append(message);
 }, 1000);
