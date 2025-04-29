@@ -27,7 +27,8 @@ page:
 
 /* configure an outline for comments */
 .review-thread-component {
-  outline: var(--comment-outline, 2px solid var(--f-red-border));
+  --comment-outline-color: var(--f-red-border);
+  outline: 2px solid var(--comment-outline-color);
   opacity: var(--comment-opacity);
   border: none !important;
 }
@@ -56,8 +57,12 @@ page:
         [href*="/compare/"]
       )
   ) {
-  --comment-outline: 2px solid var(--f-green-border);
+  --comment-outline-color: var(--f-green-border);
   --comment-opacity: 0.5;
+}
+
+.review-thread-component[data-resolved="true"] {
+  --comment-outline-color
 }
 
 /* 
