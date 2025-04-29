@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1745940349000
+// @version      1745940349609
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
