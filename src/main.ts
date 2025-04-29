@@ -86,8 +86,21 @@ const style = document.createElement("style");
 style.innerHTML = styles;
 document.head.appendChild(style);
 
-setTimeout(() => {
-  const messages = document.querySelector(
+// pol the document for the element
+const getElement = async (selector: string): Promise<Element> => {
+  return new Promise((resolve) => {
+    const interval = setInterval(() => {
+      const element = document.querySelector(selector);
+      if (element) {
+        clearInterval(interval);
+        resolve(element);
+      }
+    }, 100);
+  });
+};
+
+(async () => {
+  const messages = await getElement(
     ".partial-pull-merging-analytics-js section + div"
   );
   if (!messages) return;
@@ -100,4 +113,4 @@ setTimeout(() => {
   message.innerText = "Actions of this PR";
 
   messages.append(message);
-}, 1000);
+})();
