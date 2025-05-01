@@ -183,7 +183,6 @@ body:has([title*="fixup!"]) {
   --error: "Please rebase fixups before merging";
 }
 
-// style query has --error then
 @container (--error) {
   [class*="prc-Button-ButtonBase"] {
     --merge-opacity: 0.2;

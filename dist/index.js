@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746104057512
+// @version      1746104059364
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -198,7 +198,6 @@ body:has([title*="fixup!"]) {
   --error: "Please rebase fixups before merging";
 }
 
-// style query has --error then
 @container (--error) {
   [class*="prc-Button-ButtonBase"] {
     --merge-opacity: 0.2;
