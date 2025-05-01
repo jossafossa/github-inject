@@ -180,9 +180,7 @@ body:has([title*="fixup!"]) {
 }
 
 body:not(
-    body:has(
-        .js-discussion > .TimelineItem:nth-child(1):has([alt*="joosthobma"])
-      )
+    body:has(.js-discussion > .TimelineItem:nth-child(1) [alt*="joosthobma"])
   ) {
   --message: "This is not your PR to merge!";
 }
