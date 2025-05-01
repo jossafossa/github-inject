@@ -1,9 +1,12 @@
 const loadActionsButton = () => {
-  const messages = document.querySelector(
+  const container = document.querySelector(
     ".partial-pull-merging-analytics-js section + div"
   );
 
-  if (!messages) return;
+  if (!container) return;
+
+  const messages = document.createElement("div");
+  container.prepend(messages);
 
   messages.classList.add("fs-messages");
 
