@@ -197,9 +197,7 @@ body:has(.fs-error) {
 }
 
 @container style(--error) {
-  [class*="prc-Button-ButtonBase"] {
-    @include disabled-button;
-  }
+  @include disabled-button;
 }
 
 body:not(
