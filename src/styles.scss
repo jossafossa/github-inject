@@ -185,7 +185,7 @@ body:has([title*="fixup!"]) {
 }
 
 @mixin disabled-button {
-  .fs-errors + [class*="prc-Button-ButtonBase"] {
+  .fs-errors + div [class*="prc-Button-ButtonBase"] {
     opacity: 0.2;
     pointer-events: none;
     cursor: not-allowed;
