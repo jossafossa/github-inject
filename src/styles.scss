@@ -150,7 +150,7 @@ relative-time:after {
 -- MESSAGES --
 */
 
-#fs-messages:before {
+.fs-messages:before {
   content: var(--message);
   padding: 8px;
   background-color: var(--f-red-border);
