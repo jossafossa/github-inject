@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103295677
+// @version      1746103317263
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -26,7 +26,7 @@ page:
 */
 
 :root {
-  --f-merge: rgb(167, 48, 161);
+  --f-merge: #8957e5;
   --f-red: rgb(231, 12, 8);
   --f-orange: rgb(236, 164, 6);
   --f-green: rgb(21, 194, 56);
