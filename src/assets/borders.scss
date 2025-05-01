@@ -1,3 +1,4 @@
+@use "env";
 /* 
 -- BODY BORDER COLOR --
 */
@@ -11,14 +12,14 @@ body {
 %test-label-body-style {
   --body-color: var(--f-warning);
 }
-@each $test_label in $test_labels {
+@each $test_label in env.$test_labels {
   body:has(.discussion-sidebar-item [data-name*="#{$test_label}"]) {
     @extend %test-label-body-style;
   }
 }
 
 /* The body color is green when a tester left a comment  */
-body:has(.author[href*="#{$test_username}"]) {
+body:has(.author[href*="#{env.$test_username}"]) {
   --body-color: var(--f-positive);
 }
 
