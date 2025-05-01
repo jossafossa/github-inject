@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103409188
+// @version      1746103427965
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -173,7 +173,7 @@ relative-time:after {
 .fs-message {
   content: var(--message);
   padding: 8px;
-  background-color: var(--f-warning-border);
+  background-color: var(--f-info-border);
   color: white;
   border-radius: 4px;
   margin-bottom: 1rem;
