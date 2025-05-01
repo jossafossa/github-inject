@@ -29,12 +29,11 @@ const waitFor = async (selector: string) =>
 const githubLoaded = async () => {
   console.log("github loaded");
 };
+waitFor(".timeline-comment-group").then(githubLoaded);
 
 const pipelineLoaded = async () => {
   console.log("pipeline loaded");
 };
-
-waitFor(".timeline-comment-group").then(githubLoaded);
 waitFor("[class*='MergeBoxSectionHeader-module__wrapper']").then(
   pipelineLoaded
 );
