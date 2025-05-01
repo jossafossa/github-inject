@@ -199,8 +199,7 @@ body:has([title*="fixup!"]) {
 }
 
 body:has(.fs-error) {
-  --merge-opacity: 0.2;
-  --merge-pointer-events: none;
+  @extend %disabled-button;
 }
 
 body:not(
