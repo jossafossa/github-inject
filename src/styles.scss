@@ -184,20 +184,20 @@ body:has([title*="fixup!"]) {
   --error: "Please rebase fixups before merging";
 }
 
-%disabled-button {
+@mixin disabled-button {
   opacity: 0.2;
   pointer-events: none;
   cursor: not-allowed;
 }
 
-@container style(--error) {
-  [class*="prc-Button-ButtonBase"] {
-    @extend %disabled-button;
-  }
+body:has(.fs-error) {
+  @include disabled-button;
 }
 
-body:has(.fs-error) {
-  @extend %disabled-button;
+@container style(--error) {
+  [class*="prc-Button-ButtonBase"] {
+    @include disabled-button;
+  }
 }
 
 body:not(
