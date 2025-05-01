@@ -1,3 +1,5 @@
+import { loadLockMergeCheckbox } from "./mergeCheckbox";
+import { loadMessages } from "./messages";
 import { loadStatus } from "./status";
 import styles from "./styles.scss?raw";
 import { waitFor } from "./utils";
@@ -6,27 +8,6 @@ import { waitFor } from "./utils";
 const style = document.createElement("style");
 style.innerHTML = styles;
 document.head.appendChild(style);
-
-const LOCK_MERGE_STORAGE_KEY = "lock-merge";
-
-const loadLockMergeCheckbox = () => {
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.id = "lock-merge";
-
-  document.body.appendChild(checkbox);
-
-  if (localStorage.getItem(LOCK_MERGE_STORAGE_KEY) === "checked") {
-    checkbox.checked = true;
-  }
-
-  checkbox.addEventListener("change", () => {
-    localStorage.setItem(
-      LOCK_MERGE_STORAGE_KEY,
-      checkbox.checked ? "checked" : "unchecked"
-    );
-  });
-};
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   document
@@ -59,22 +40,6 @@ const loadLockMergeCheckbox = () => {
 //     });
 // });
 
-const loadActionsButton = () => {
-  const messages = document.querySelector(
-    ".partial-pull-merging-analytics-js section + div"
-  );
-
-  if (!messages) return;
-
-  const message = document.createElement("a");
-  message.href =
-    "https://github.com/simplicate-software/frontend/actions?query=actor:joosthobmasimplicate";
-
-  message.innerText = "Actions of this PR";
-
-  messages.append(message);
-};
-
 const githubLoaded = async () => {
   console.log("github loaded");
   loadLockMergeCheckbox();
@@ -84,7 +49,7 @@ waitFor(".timeline-comment-group").then(githubLoaded);
 
 const pipelineLoaded = async () => {
   console.log("pipeline loaded");
-  loadActionsButton();
+  loadMessages();
 };
 waitFor("[class*='MergeBoxSectionHeader-module__wrapper']").then(
   pipelineLoaded
