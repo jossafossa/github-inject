@@ -16,8 +16,7 @@ const GITHUB_CONFIG = {
   username: "joosthobma", 
   userId: 175005199,
   testUsername: "vandergeest",
-  testLabel: ["QA-Test", "qa-test"]
-
+  testLabel: ["QA-Test", "qa-test"],
   features: {
     lockMerge: true,
     status: true,
