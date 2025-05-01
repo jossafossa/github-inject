@@ -13,6 +13,10 @@ const copyText = (
   const element = document.querySelector(selector);
   if (element) {
     const text = callback(element as HTMLElement);
+    element.classList.add("fs-copied");
+    setTimeout(() => {
+      element.classList.remove("fs-copied");
+    }, 2000);
     navigator.clipboard
       .writeText(text)
       .then(() => {
