@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github Enhancer
 // @namespace    http://tampermonkey.net/
-// @version      1746110403776
+// @version      1746110452845
 // @description  Enhance your Github experience with additional features.
 // @author       Jossafossa
 // @match        https://github.com/*
@@ -14,6 +14,10 @@
 /*
 const GITHUB_CONFIG = {
   username: "joosthobma", 
+  userId: 175005199,
+  testUsername: "vandergeest",
+  testLabel: ["QA-Test", "qa-test"]
+
   features: {
     lockMerge: true,
     status: true,
