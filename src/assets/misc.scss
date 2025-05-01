@@ -29,3 +29,12 @@ relative-time:after {
   opacity: 0.2;
   cursor: not-allowed;
 }
+
+/* 
+-- DRAFT BUTTON COLOR --
+*/
+
+/* outline the tag button with red */
+[reviewable_state="draft"] {
+  outline: 1rem solid var(--f-merge);
+}
