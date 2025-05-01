@@ -37,7 +37,7 @@ $my_user_id: 175005199 !default;
 /* set the comment to orange when I commented last */
 :where(
     .review-thread-component:has(
-        .js-comments-holder > div:nth-last-child(1) img[src*="{$my_user_id}"]
+        .js-comments-holder > div:nth-last-child(1) img[src*="#{$my_user_id}"]
       )
   ) {
   --comment-outline: 2px solid var(--f-warning-border);
@@ -47,7 +47,7 @@ $my_user_id: 175005199 !default;
 /* gray out the comment and mark it green when i commented last with a commit hash */
 :where(
     .review-thread-component:has(
-        .js-comments-holder > div:nth-last-child(1) img[src*="{$my_user_id}"]
+        .js-comments-holder > div:nth-last-child(1) img[src*="#{$my_user_id}"]
       ):has(
         .js-comments-holder > div:nth-last-child(1) .commit-link,
         [href*="/compare/"]
