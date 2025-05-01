@@ -185,11 +185,9 @@ body:has([title*="fixup!"]) {
 }
 
 %disabled-button {
-  [class*="prc-Button-ButtonBase"] {
-    opacity: 0.2;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 @container style(--error) {

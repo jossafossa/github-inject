@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746104287508
+// @version      1746104312559
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -200,11 +200,9 @@ body:has([title*="fixup!"]) {
 }
 
 %disabled-button {
-  [class*="prc-Button-ButtonBase"] {
-    opacity: 0.2;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 @container style(--error) {
