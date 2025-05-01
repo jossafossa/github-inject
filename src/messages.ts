@@ -5,6 +5,8 @@ const loadActionsButton = () => {
 
   if (!messages) return;
 
+  messages.classList.add("fs-messages");
+
   const message = document.createElement("a");
   message.href =
     "https://github.com/simplicate-software/frontend/actions?query=actor:joosthobmasimplicate";
