@@ -2,13 +2,13 @@ import { loadCopy } from "./copy";
 import { loadLockMerge } from "./lockMerge";
 import { loadMessages } from "./messages";
 import { loadStatus } from "./status";
-import styles from "./styles.scss?raw";
+import "./styles.scss";
 import { waitFor, log } from "./utils";
 
-// insert a style
-const style = document.createElement("style");
-style.innerHTML = styles;
-document.head.appendChild(style);
+// // insert a style
+// const style = document.createElement("style");
+// style.innerHTML = styles;
+// document.head.appendChild(style);
 
 const githubLoaded = async () => {
   log("github loaded");
