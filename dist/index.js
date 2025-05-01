@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github Enhancer
 // @namespace    http://tampermonkey.net/
-// @version      1746110374794
+// @version      1746110403776
 // @description  Enhance your Github experience with additional features.
 // @author       Jossafossa
 // @match        https://github.com/*
@@ -14,7 +14,13 @@
 /*
 const GITHUB_CONFIG = {
   username: "joosthobma", 
-  
+  features: {
+    lockMerge: true,
+    status: true,
+    copy: true,
+    shortcuts: true,
+    messages: true,
+  },
 }
 */
 (function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))a(o);new MutationObserver(o=>{for(const n of o)if(n.type==="childList")for(const s of n.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&a(s)}).observe(document,{childList:!0,subtree:!0});function r(o){const n={};return o.integrity&&(n.integrity=o.integrity),o.referrerPolicy&&(n.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?n.credentials="include":o.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(o){if(o.ep)return;o.ep=!0;const n=r(o);fetch(o.href,n)}})();const u=(e,t)=>{const r=document.querySelector(e);if(r){const a=t(r);r.classList.add("fs-copied"),setTimeout(()=>{r.classList.remove("fs-copied")},2e3),navigator.clipboard.writeText(a).then(()=>{console.log(`Copied: ${a}`)}).catch(o=>{console.error("Failed to copy text:",o)})}else console.warn(`Element with selector "${e}" not found.`)},m=({url:e,selector:t,shortcut:r,shortcutLabel:a,callback:o=n=>n.innerText})=>{window.location.href.includes(e)&&(document.addEventListener("keydown",n=>{r(n)&&(n.preventDefault(),u(t,o))}),document.querySelectorAll(t).forEach(n=>{n.dataset.shortcutLabel=a}))},f=()=>{m({url:"github.com",selector:"clipboard-copy",shortcut:e=>e.metaKey&&e.shiftKey&&e.code==="KeyA",shortcutLabel:"⌘⇧A",callback:e=>e.getAttribute("value")??""})},c="lock-merge",h=()=>{const e=document.createElement("input");e.type="checkbox",e.id="lock-merge",document.body.appendChild(e),localStorage.getItem(c)==="checked"&&(e.checked=!0),e.addEventListener("change",()=>{localStorage.setItem(c,e.checked?"checked":"unchecked")})},p=()=>{document.querySelectorAll("details-collapsible summary a").forEach(e=>{var r;let t=document.createElement("span");t.innerHTML=`<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy">

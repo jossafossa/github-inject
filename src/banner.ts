@@ -14,7 +14,13 @@ export const getBanner = () => `// ==UserScript==
 /*
 const GITHUB_CONFIG = {
   username: "joosthobma", 
-  
+  features: {
+    lockMerge: true,
+    status: true,
+    copy: true,
+    shortcuts: true,
+    messages: true,
+  },
 }
 */
 `;
