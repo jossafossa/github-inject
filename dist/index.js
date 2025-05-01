@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746104159059
+// @version      1746104250659
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -199,16 +199,18 @@ body:has([title*="fixup!"]) {
   --error: "Please rebase fixups before merging";
 }
 
-@container style(--error) {
+%disabled-button {
   [class*="prc-Button-ButtonBase"] {
-    --merge-opacity: 0.2;
-    --merge-pointer-events: none;
+    opacity: 0.2;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
-[class*="prc-Button-ButtonBase"] {
-  opacity: var(--merge-opacity);
-  pointer-events: var(--merge-pointer-events);
+@container style(--error) {
+  [class*="prc-Button-ButtonBase"] {
+    @extend %disabled-button;
+  }
 }
 
 body:has(.fs-error) {
