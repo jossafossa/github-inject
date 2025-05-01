@@ -227,8 +227,8 @@ body:not(
     --background: rgba(255, 255, 255, 0.1);
     content: attr(data-shortcut-label);
     font-size: 0.8rem;
-    background-color: var(--backgorund);
-    outline: 4px solid var(--backgorund);
+    background-color: var(--background);
+    outline: 4px solid var(--background);
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.5rem;
     font-weight: bold;
