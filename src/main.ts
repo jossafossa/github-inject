@@ -30,7 +30,7 @@ waitFor("[class*='MergeBoxSectionHeader-module__wrapper']").then(
   pipelineLoaded
 );
 
-GM_registerMenuCommand(
+window.GM_registerMenuCommand(
   "Log",
   function (event: MouseEvent | KeyboardEvent) {
     console.log("Menu item selected", { event });
