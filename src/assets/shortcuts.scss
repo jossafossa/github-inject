@@ -1,0 +1,22 @@
+/* 
+-- SHORTCUTS --
+*/
+
+[data-shortcut-label] {
+  --background: rgba(255, 255, 255, 0.1);
+  &:after {
+    content: attr(data-shortcut-label);
+    font-size: 0.8rem;
+    background-color: var(--background);
+    outline: 4px solid var(--background);
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 1px;
+  }
+}
+
+.fs-copied {
+  --background: var(--f-info-border);
+}
