@@ -36,6 +36,8 @@ const getMessage = (value: string) => {
 const loadPipelineMessage = () => {
   const branch = getBranch();
 
+  console.log({ branch });
+
   if (!branch) return;
 
   return getMessage(
