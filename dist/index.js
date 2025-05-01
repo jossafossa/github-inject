@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103349100
+// @version      1746103362784
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -28,11 +28,11 @@ page:
 :root {
   --f-merge: #8957e5;
   --f-merge-border: #8957e5;
-  --f-red: rgb(231, 12, 8);
-  --f-orange: rgb(236, 164, 6);
+  --f-error: rgb(231, 12, 8);
+  --f-warning: rgb(236, 164, 6);
   --f-positive: rgb(21, 194, 56);
-  --f-red-border: rgb(168, 43, 41);
-  --f-orange-border: rgb(210 153 34);
+  --f-error-border: rgb(168, 43, 41);
+  --f-warning-border: rgb(210 153 34);
   --f-positive-border: rgb(35 134 54);
 }
 
@@ -42,7 +42,7 @@ page:
 
 /* configure an outline for comments */
 .review-thread-component {
-  --comment-outline-color: var(--f-red-border);
+  --comment-outline-color: var(--f-error-border);
   outline: 2px solid var(--comment-outline-color);
   opacity: var(--comment-opacity);
   border: none !important;
@@ -59,7 +59,7 @@ page:
         .js-comments-holder > div:nth-last-child(1) img[src*="175005199"]
       )
   ) {
-  --comment-outline: 2px solid var(--f-orange-border);
+  --comment-outline: 2px solid var(--f-warning-border);
   transition: 0.15s ease;
 }
 
@@ -103,7 +103,7 @@ body:has(
     .discussion-sidebar-item [data-name*="QA-Test"],
     .discussion-sidebar-item[data-name*="qa-test"]
   ) {
-  --body-color: var(--f-orange);
+  --body-color: var(--f-warning);
 }
 
 /* The body color is green when a tester left a comment  */
@@ -113,12 +113,12 @@ body:has(.author[href*="vandergeest"]) {
 
 /* The body color is red when the PR is in draft */
 body:has([reviewable_state="draft"]) {
-  --body-color: var(--f-red);
+  --body-color: var(--f-error);
 }
 
 /* The body color is red when the PR has pipeline issues */
 body:has(.merge-status-item .color-fg-danger) {
-  --body-color: var(--f-red);
+  --body-color: var(--f-error);
 }
 
 /* 
@@ -171,7 +171,7 @@ relative-time:after {
 .fs-message {
   content: var(--message);
   padding: 8px;
-  background-color: var(--f-orange-border);
+  background-color: var(--f-warning-border);
   color: white;
   border-radius: 4px;
   margin-bottom: 1rem;
@@ -186,7 +186,7 @@ relative-time:after {
 .fs-errors:before,
 .fs-error {
   content: var(--error);
-  background-color: var(--f-red-border);
+  background-color: var(--f-error-border);
 }
 
 body:has(#lock-merge:checked) {
