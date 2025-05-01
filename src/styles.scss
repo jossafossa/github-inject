@@ -83,6 +83,9 @@ body {
 }
 
 /* The body color is orange. when a tag with qa-test is applied */
+%test-label-body-style {
+  border-left: 1rem solid var(--body-color) !important;
+}
 @each $test_label in $test_labels {
   body:has(.discussion-sidebar-item [data-name*="#{$test_label}"]) {
     --body-color: var(--f-warning);
