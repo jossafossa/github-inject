@@ -169,8 +169,8 @@ relative-time:after {
 }
 
 :where(.fs-message, .fs-error) a {
-  --background: var(--f-positive-border);
-  --border: var(--f-positive);
+  color: inherit;
+  text-decoration: none;
 }
 
 .fs-errors:before,
