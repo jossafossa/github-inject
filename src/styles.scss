@@ -184,7 +184,7 @@ body:has([title*="fixup!"]) {
   --error: "Please rebase fixups before merging";
 }
 
-@container (--error) {
+@container style(--error) {
   [class*="prc-Button-ButtonBase"] {
     --merge-opacity: 0.2;
     --merge-pointer-events: none;
