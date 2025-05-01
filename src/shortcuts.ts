@@ -26,7 +26,7 @@ const copyText = (
   }
 };
 
-const bootstrapCopyText = ({
+const setupCopy = ({
   url,
   selector,
   shortcut,
@@ -47,10 +47,13 @@ const bootstrapCopyText = ({
   });
 };
 
-bootstrapCopyText({
-  url: "github.com",
-  selector: "clipboard-copy",
-  shortcut: (event) => event.metaKey && event.shiftKey && event.code === "KeyA",
-  shortcutLabel: "⌘⇧A",
-  callback: (e) => e.getAttribute("value") ?? "",
-});
+export const loadShortcuts = () => {
+  setupCopy({
+    url: "github.com",
+    selector: "clipboard-copy",
+    shortcut: (event) =>
+      event.metaKey && event.shiftKey && event.code === "KeyA",
+    shortcutLabel: "⌘⇧A",
+    callback: (e) => e.getAttribute("value") ?? "",
+  });
+};
