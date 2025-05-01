@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import edit from "rollup-plugin-edit";
-import { getBanner } from "./src/banner.js";
+import { getBanner } from "./src/banner.ts";
 
 export default defineConfig({
   plugins: [
