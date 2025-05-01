@@ -3,7 +3,7 @@
 -- BODY BORDER COLOR --
 */
 
-body {
+:where(body) {
   --body-color: transparent;
   border-left: 1rem solid var(--body-color) !important;
 }
