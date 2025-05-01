@@ -143,15 +143,5 @@ relative-time:after {
   cursor: not-allowed;
 }
 
-/* 
--- LOCK MERGE --
- */
-#lock-merge {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-}
-
 @use "messages";
 @use "shortcuts";
