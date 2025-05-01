@@ -1,5 +1,10 @@
 import styles from "./styles.scss?raw";
 
+// insert a style
+const style = document.createElement("style");
+style.innerHTML = styles;
+document.head.appendChild(style);
+
 const getStatus = () => {
   if (document.querySelector(".gh-header-meta [title='Status: Merged']"))
     return "merged";
@@ -8,6 +13,24 @@ const getStatus = () => {
     return "test";
   return false;
 };
+
+const waitFor = async (selector: string) =>
+  new Promise((resolve) => {
+    const interval = setInterval(() => {
+      const element = document.querySelector(selector);
+      if (element) {
+        clearInterval(interval);
+        resolve(element);
+      }
+    }, 100);
+  });
+
+// github loaded
+const githubLoaded = async () => {
+  console.log("github loaded");
+};
+
+waitFor(".timeline-comment-group").then(githubLoaded);
 
 let updated = false;
 const interval = setInterval(() => {
@@ -80,11 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
       anchor.parentNode?.appendChild(copyLink);
     });
 });
-
-// insert a style
-const style = document.createElement("style");
-style.innerHTML = styles;
-document.head.appendChild(style);
 
 // pol the document for the element
 const getElement = async (selector: string): Promise<Element> => {
