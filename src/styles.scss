@@ -84,7 +84,7 @@ body {
 /* The body color is orange. when a tag with qa-test is applied */
 body:has(
     .discussion-sidebar-item [data-name*="QA-Test"],
-    .discussion-sidebar-item[data-name*="qa-test"]
+    .discussion-sidebar-item [data-name*="qa-test"]
   ) {
   --body-color: var(--f-warning);
 }
