@@ -1,5 +1,5 @@
 export const getBanner = () => `// ==UserScript==
-// @name         Github test
+// @name         Github Enhancer
 // @namespace    http://tampermonkey.net/
 // @version      ${Date.now()}
 // @description  Enhance your Github experience with additional features.
