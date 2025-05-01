@@ -1,4 +1,5 @@
 import styles from "./styles.scss?raw";
+import { waitFor } from "./utils";
 
 // insert a style
 const style = document.createElement("style");
@@ -14,18 +15,6 @@ const getStatus = () => {
   return false;
 };
 
-const waitFor = async (selector: string) =>
-  new Promise((resolve) => {
-    const interval = setInterval(() => {
-      const element = document.querySelector(selector);
-      if (element) {
-        clearInterval(interval);
-        resolve(element);
-      }
-    }, 100);
-  });
-
-// github loaded
 const githubLoaded = async () => {
   console.log("github loaded");
 };
@@ -52,31 +41,30 @@ const interval = setInterval(() => {
   }
 }, 100);
 
-// make merge button lockable
-function initializeCheckbox() {
+const LOCK_MERGE_STORAGE_KEY = "lock-merge";
+
+const loadLockMergeCheckbox = () => {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.id = "lock-merge";
 
   document.body.appendChild(checkbox);
 
-  const storedValue = localStorage.getItem("checkboxState");
-
-  if (storedValue === "checked") {
+  if (localStorage.getItem(LOCK_MERGE_STORAGE_KEY) === "checked") {
     checkbox.checked = true;
   }
 
   checkbox.addEventListener("change", () => {
     localStorage.setItem(
-      "checkboxState",
+      LOCK_MERGE_STORAGE_KEY,
       checkbox.checked ? "checked" : "unchecked"
     );
   });
-}
+};
 
 document.addEventListener("click", () => {
   if (document.querySelector("#lock-merge")) return;
-  initializeCheckbox();
+  loadLockMergeCheckbox();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
