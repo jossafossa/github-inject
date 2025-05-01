@@ -30,7 +30,14 @@ const githubLoaded = async () => {
   console.log("github loaded");
 };
 
+const pipelineLoaded = async () => {
+  console.log("pipeline loaded");
+};
+
 waitFor(".timeline-comment-group").then(githubLoaded);
+waitFor("[class*='MergeBoxSectionHeader-module__wrapper']").then(
+  pipelineLoaded
+);
 
 let updated = false;
 const interval = setInterval(() => {
