@@ -110,38 +110,7 @@ body:has(.merge-status-item .color-fg-danger) {
 body:has(.State--merged) {
   --body-color: var(--f-merge);
 }
-
-/* 
--- EXTRA QUALITY OF LIFE CHANGES --
- */
-
-/* add absolute time */
-relative-time:after {
-  font-size: 70%;
-  content: " " attr(datetime);
-  font-weight: bold;
-  opacity: 0.5;
-}
-
-/* resize the sidebar */
-.Layout-sidebar {
-  resize: horizontal;
-}
-
-/* hide draftS IN PR List */
-.js-issue-row:has([aria-label*="Draft"], [href*="dependabot"]):not(:hover) {
-  opacity: 0.4;
-}
-
-/* disable the merge button for PR that are not from me */
-#discussion_bucket:has(
-    .TimelineItem:nth-child(1):has([alt*="#{$my_user_name}"])
-  )
-  .merge-message
-  .BtnGroup:not(:hover) {
-  opacity: 0.2;
-  cursor: not-allowed;
-}
-
+@use "misc";
+@use "lockMerge";
 @use "messages";
 @use "shortcuts";
