@@ -160,12 +160,12 @@ relative-time:after {
   --border: var(--f-info);
   content: var(--message);
   padding: 8px;
-  background-color: var(--f-info-border);
+  background-color: var(--background);
   color: white;
   border-radius: 4px;
   margin-bottom: 1rem;
   display: flex;
-  border-left: 8px solid var(--f-info);
+  border-left: 8px solid var(border-);
 
   a {
     color: inherit;
