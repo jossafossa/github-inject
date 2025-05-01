@@ -184,12 +184,21 @@ body:has([title*="fixup!"]) {
 }
 
 // style query has --error then
-
-@container (has(--error)) {
+@container (--error) {
   [class*="prc-Button-ButtonBase"] {
-    opacity: 0.2;
-    pointer-events: none;
+    --merge-opacity: 0.2;
+    --merge-pointer-events: none;
   }
+}
+
+[class*="prc-Button-ButtonBase"] {
+  opacity: var(--merge-opacity);
+  pointer-events: var(--merge-pointer-events);
+}
+
+body:has(.fs-error) [class*="prc-Button-ButtonBase"] {
+  --merge-opacity: 0.2;
+  --merge-pointer-events: none;
 }
 
 body:not(
