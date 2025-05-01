@@ -13,19 +13,4 @@ export const getBanner = () => `// ==UserScript==
 // @updateURL    https://raw.githubusercontent.com/jossafossa/github-inject/refs/heads/master/dist/index.js
 // ==/UserScript==
 
-/*
-const GITHUB_CONFIG = {
-  username: "joosthobma", 
-  userId: 175005199,
-  testUsername: "vandergeest",
-  testLabel: ["QA-Test", "qa-test"],
-  features: {
-    lockMerge: true,
-    status: true,
-    copy: true,
-    shortcuts: true,
-    messages: true,
-  },
-}
-*/
 `;
