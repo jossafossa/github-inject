@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103362784
+// @version      1746103374004
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -29,10 +29,10 @@ page:
   --f-merge: #8957e5;
   --f-merge-border: #8957e5;
   --f-error: rgb(231, 12, 8);
-  --f-warning: rgb(236, 164, 6);
-  --f-positive: rgb(21, 194, 56);
   --f-error-border: rgb(168, 43, 41);
+  --f-warning: rgb(236, 164, 6);
   --f-warning-border: rgb(210 153 34);
+  --f-positive: rgb(21, 194, 56);
   --f-positive-border: rgb(35 134 54);
 }
 
