@@ -185,9 +185,11 @@ body:has([title*="fixup!"]) {
 }
 
 @mixin disabled-button {
-  opacity: 0.2;
-  pointer-events: none;
-  cursor: not-allowed;
+  [class*="prc-Button-ButtonBase"] {
+    opacity: 0.2;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 body:has(.fs-error) {
