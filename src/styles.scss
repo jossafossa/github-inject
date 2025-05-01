@@ -88,7 +88,7 @@ body {
 }
 @each $test_label in $test_labels {
   body:has(.discussion-sidebar-item [data-name*="#{$test_label}"]) {
-    --body-color: var(--f-warning);
+    @extend %test-label-body-style;
   }
 }
 
