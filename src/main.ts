@@ -1,6 +1,7 @@
 import { loadCopy } from "./copy";
 import { loadLockMerge } from "./lockMerge";
 import { loadMessages } from "./messages";
+import { loadShortcuts } from "./shortcuts";
 import { loadStatus } from "./status";
 import styles from "./styles.scss?inline";
 import { waitFor, log } from "./utils";
@@ -15,6 +16,7 @@ const githubLoaded = async () => {
   loadLockMerge();
   loadStatus();
   loadCopy();
+  loadShortcuts();
 };
 waitFor(".timeline-comment-group").then(githubLoaded);
 
