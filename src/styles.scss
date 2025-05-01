@@ -173,6 +173,7 @@ relative-time:after {
 .fs-errors:before,
 .fs-error {
   content: var(--error);
+  background-color: var(--f-error-border);
 }
 
 body:has(#lock-merge:checked) {
