@@ -166,11 +166,11 @@ relative-time:after {
   margin-bottom: 1rem;
   display: flex;
   border-left: 8px solid var(--border);
+}
 
-  a {
-    color: inherit;
-    text-decoration: underline;
-  }
+:where(.fs-message, .fs-error) a {
+  --background: var(--f-positive-border);
+  --border: var(--f-positive);
 }
 
 .fs-errors:before,
