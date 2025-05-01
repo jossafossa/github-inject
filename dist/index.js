@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746101194953
+// @version      1746101398346
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -194,10 +194,10 @@ body:has([title*="fixup!"]) {
   }
 }
 
-body:has(
-    #discussion_bucket:has(.TimelineItem:nth-child(1):has([alt*="joosthobma"]))
-      .merge-message
-      .BtnGroup:not(:hover)
+body:not(
+    body:has(
+        .js-discussion > .TimelineItem:nth-child(1):has([alt*="joosthobma"])
+      )
   ) {
   --message: "This is not your PR to merge!";
 }
