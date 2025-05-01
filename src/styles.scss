@@ -107,6 +107,10 @@ body:has(.merge-status-item .color-fg-danger) {
   --body-color: var(--f-error);
 }
 
+body:has(.State--merged) {
+  --body-color: var(--f-merge);
+}
+
 /* 
 -- EXTRA QUALITY OF LIFE CHANGES --
  */
