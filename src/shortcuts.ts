@@ -26,13 +26,13 @@ const copyText = (
   }
 };
 
-function bootstrapCopyText({
+const bootstrapCopyText = ({
   url,
   selector,
   shortcut,
   shortcutLabel,
   callback = (element: HTMLElement) => element.innerText,
-}: bootstrapCopyTextProps) {
+}: bootstrapCopyTextProps) => {
   if (!window.location.href.includes(url)) return;
 
   document.addEventListener("keydown", (event) => {
@@ -45,7 +45,7 @@ function bootstrapCopyText({
   document.querySelectorAll(selector).forEach((e) => {
     (e as HTMLElement).dataset.shortcutLabel = shortcutLabel;
   });
-}
+};
 
 bootstrapCopyText({
   url: "github.com",
