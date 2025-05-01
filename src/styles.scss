@@ -90,7 +90,7 @@ body:has(
 }
 
 /* The body color is green when a tester left a comment  */
-body:has(.author[href*="vandergeest"]) {
+body:has(.author[href*="#{$test_username}"]) {
   --body-color: var(--f-positive);
 }
 
