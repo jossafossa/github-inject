@@ -3,7 +3,7 @@ import { loadLockMerge } from "./lockMerge";
 import { loadMessages } from "./messages";
 import { loadShortcuts } from "./shortcuts";
 import { loadStatus } from "./status";
-import styles from "./assets/styles.scss?inline";
+import styles from "./assets/index.scss?inline";
 import { waitFor, log } from "./utils";
 
 // insert a style
