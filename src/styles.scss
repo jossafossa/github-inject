@@ -237,6 +237,6 @@ body:not(
   }
 }
 
-.fs-copied {
+.fs-copied:after {
   --background: var(--f-info-border);
 }
