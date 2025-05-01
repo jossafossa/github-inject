@@ -28,8 +28,6 @@ const getMessage = (value: string) => {
   message.classList.add("fs-message");
   message.innerHTML = value;
 
-  message.append(message);
-
   return message;
 };
 
