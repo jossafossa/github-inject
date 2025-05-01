@@ -1,14 +1,4 @@
-/*
-Comments:
-- outline:red = not responded
-- outline:orange = responded
-- outline:green = responded with commit
-
-page: 
-- border:red = change requested
-- border:orange = status:test
-- border:green = tested
-*/
+$my_user_id: 175005199 !default;
 
 :root {
   --f-merge: #8957e5;
@@ -47,7 +37,7 @@ page:
 /* set the comment to orange when I commented last */
 :where(
     .review-thread-component:has(
-        .js-comments-holder > div:nth-last-child(1) img[src*="175005199"]
+        .js-comments-holder > div:nth-last-child(1) img[src*="{$my_user_id}"]
       )
   ) {
   --comment-outline: 2px solid var(--f-warning-border);
@@ -57,7 +47,7 @@ page:
 /* gray out the comment and mark it green when i commented last with a commit hash */
 :where(
     .review-thread-component:has(
-        .js-comments-holder > div:nth-last-child(1) img[src*="175005199"]
+        .js-comments-holder > div:nth-last-child(1) img[src*="{$my_user_id}"]
       ):has(
         .js-comments-holder > div:nth-last-child(1) .commit-link,
         [href*="/compare/"]
