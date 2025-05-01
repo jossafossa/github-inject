@@ -223,8 +223,8 @@ body:not(
 */
 
 [data-shortcut-label] {
+  --background: rgba(255, 255, 255, 0.1);
   &:after {
-    --background: rgba(255, 255, 255, 0.1);
     content: attr(data-shortcut-label);
     font-size: 0.8rem;
     background-color: var(--background);
@@ -237,6 +237,6 @@ body:not(
   }
 }
 
-.fs-copied:after {
+.fs-copied {
   --background: var(--f-info-border);
 }
