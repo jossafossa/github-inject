@@ -217,3 +217,19 @@ body:not(
   ) {
   --error: "This is not your PR to merge!";
 }
+
+/* 
+-- SHORTCUTS --
+*/
+
+[data-shortcut-label] {
+  &:after {
+    content: attr(data-shortcut-label);
+    font-size: 0.8rem;
+    background-color: var(--f-info-border);
+    outline: 2px solid var(--f-info-border);
+    color: var(--f-info);
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+}
