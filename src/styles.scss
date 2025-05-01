@@ -170,7 +170,7 @@ relative-time:after {
 
 :where(.fs-message, .fs-error) a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .fs-errors:before,
