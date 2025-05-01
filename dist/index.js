@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103433439
+// @version      1746103536951
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -178,6 +178,7 @@ relative-time:after {
   border-radius: 4px;
   margin-bottom: 1rem;
   display: flex;
+  border: 1px solid var(--f-info);
 
   a {
     color: inherit;
@@ -189,6 +190,7 @@ relative-time:after {
 .fs-error {
   content: var(--error);
   background-color: var(--f-error-border);
+  border: 1px solid var(--f-error);
 }
 
 body:has(#lock-merge:checked) {
