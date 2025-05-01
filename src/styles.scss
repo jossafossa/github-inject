@@ -1,7 +1,7 @@
 $my_user_id: 175005199 !default;
 $my_user_name: "joosthobma" !default;
 $test_username: "vandergeest" !default;
-$test_labels: "QA-Test", "qa-test" !default;
+$test_labels: ("QA-Test", "qa-test") !default;
 
 :root {
   --f-merge: #8957e5;
@@ -83,10 +83,7 @@ body {
 }
 
 /* The body color is orange. when a tag with qa-test is applied */
-body:has(
-    .discussion-sidebar-item [data-name*="QA-Test"],
-    .discussion-sidebar-item [data-name*="qa-test"]
-  ) {
+body:has(.discussion-sidebar-item [data-name*="#{$test_labels}"]) {
   --body-color: var(--f-warning);
 }
 
