@@ -15,12 +15,12 @@ export default defineConfig({
   ],
   build: {
     cssCodeSplit: false,
-    rollupOptions: {
-      output: {
-        entryFileNames: "index.js",
-        chunkFileNames: "index.js",
-        assetFileNames: "[name][extname]",
-      },
-    },
+    // rollupOptions: {
+    //   output: {
+    //     entryFileNames: "index.js",
+    //     chunkFileNames: "index.js",
+    //     assetFileNames: "[name][extname]",
+    //   },
+    // },
   },
 });
