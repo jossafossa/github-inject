@@ -1,4 +1,4 @@
-import { loadLockMergeCheckbox } from "./mergeCheckbox";
+import { loadLockMerge } from "./lockMerge";
 import { loadMessages } from "./messages";
 import { loadStatus } from "./status";
 import styles from "./styles.scss?raw";
@@ -42,7 +42,7 @@ document.head.appendChild(style);
 
 const githubLoaded = async () => {
   console.log("github loaded");
-  loadLockMergeCheckbox();
+  loadLockMerge();
   loadStatus();
 };
 waitFor(".timeline-comment-group").then(githubLoaded);

@@ -1,6 +1,6 @@
 const LOCK_MERGE_STORAGE_KEY = "lock-merge";
 
-export const loadLockMergeCheckbox = () => {
+export const loadLockMerge = () => {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.id = "lock-merge";
