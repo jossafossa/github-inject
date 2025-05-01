@@ -2,6 +2,7 @@ type bootstrapCopyTextProps = {
   url: string;
   selector: string;
   shortcut: (event: KeyboardEvent) => boolean;
+  shortcutLabel: string;
   callback?: (element: HTMLElement) => string;
 };
 
@@ -9,6 +10,7 @@ function bootstrapCopyText({
   url,
   selector,
   shortcut,
+  shortcutLabel,
   callback = (element: HTMLElement) => element.innerText,
 }: bootstrapCopyTextProps) {
   if (!window.location.href.includes(url)) return;
@@ -40,7 +42,7 @@ function bootstrapCopyText({
   });
 
   document.querySelectorAll(selector).forEach((e) => {
-    e.classList.add("fs-can-copy");
+    (e as HTMLElement).dataset.shortcutLabel = shortcutLabel;
   });
 }
 
@@ -48,5 +50,6 @@ bootstrapCopyText({
   url: "github.com",
   selector: "clipboard-copy",
   shortcut: (event) => event.metaKey && event.shiftKey && event.code === "KeyA",
+  shortcutLabel: "⌘⇧A",
   callback: (e) => e.getAttribute("value") ?? "",
 });
