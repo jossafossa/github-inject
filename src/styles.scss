@@ -11,11 +11,11 @@ page:
 */
 
 :root {
-  --f-purple: rgb(167, 48, 161);
+  --f-merge: rgb(167, 48, 161);
   --f-red: rgb(231, 12, 8);
   --f-orange: rgb(236, 164, 6);
   --f-green: rgb(21, 194, 56);
-  --f-purple-border: rgb(141, 78, 138);
+  --f-merge-border: rgb(141, 78, 138);
   --f-red-border: rgb(168, 43, 41);
   --f-orange-border: rgb(210 153 34);
   --f-green-border: rgb(35 134 54);
@@ -71,7 +71,7 @@ page:
 
 /* outline the tag button with red */
 [reviewable_state="draft"] {
-  outline: 1rem solid var(--f-purple);
+  outline: 1rem solid var(--f-merge);
 }
 
 /* 

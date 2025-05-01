@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746103234999
+// @version      1746103295677
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -13,7 +13,7 @@
 
 (function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const s of r.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&a(s)}).observe(document,{childList:!0,subtree:!0});function o(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=o(t);fetch(t.href,r)}})();const m=()=>{document.querySelectorAll("details-collapsible summary a").forEach(e=>{var o;let n=document.createElement("span");n.innerHTML=`<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy">
     <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>`,n.style.marginLeft="10px",n.style.cursor="pointer",n.style.textDecoration="underline",n.addEventListener("click",function(a){a.preventDefault(),navigator.clipboard.writeText(e.textContent??"").then(()=>{console.log("Copied: "+e.textContent)}).catch(t=>{console.error("Failed to copy: ",t)})}),(o=e.parentNode)==null||o.appendChild(n)})},i="lock-merge",u=()=>{const e=document.createElement("input");e.type="checkbox",e.id="lock-merge",document.body.appendChild(e),localStorage.getItem(i)==="checked"&&(e.checked=!0),e.addEventListener("change",()=>{localStorage.setItem(i,e.checked?"checked":"unchecked")})},c=async e=>new Promise(n=>{const o=setInterval(()=>{const a=document.querySelector(e);a&&(clearInterval(o),n(a))},100)}),d=(...e)=>{console.log("%c[github-extensions]%c","color: #f0db4f; font-weight: bold; background: #323330; padding: 2px 5px; border-radius: 3px;","color: #fff; font-weight: normal; background: #323330; padding: 2px 5px; border-radius: 3px;",...e)},h=()=>{const e=document.querySelector('.gh-header-meta .commit-ref:not(:has([href*="master"]))');return e?e.textContent:!1},p=()=>{const e=document.querySelector(".partial-pull-merging-analytics-js section + div");if(!e)return{};const n=document.createElement("div");e.prepend(n),n.classList.add("fs-errors");const o=document.createElement("div");return e.prepend(o),o.classList.add("fs-messages"),{errors:n,messages:o}},f=e=>{const n=document.createElement("span");return n.classList.add("fs-message"),n.innerHTML=e,n},g=()=>{const e=h();if(e)return f(`<a href='https://github.com/simplicate-software/frontend/actions?query=branch:${e}'>Actions of this PR</a>`)},b=()=>{const{messages:e}=p();if(!e)return;const n=g();n&&e.append(n)},y=()=>{b()},v=()=>document.querySelector(".gh-header-meta [title='Status: Merged']")?"merged":document.querySelector("[reviewable_state='draft']")?"draft":document.querySelector("[data-name*='QA-Test'], [data-name*='qa-test']")?"test":!1,w=()=>{let e=!1;const n=setInterval(()=>{const o=v();if(e!==o&&o){const a=`[${o.toUpperCase()}]`;e=!!o;const t=document.querySelector("h1 > bdi");t&&(t.innerHTML=`${a} ${t.innerHTML}`),document.title=`${a} ${document.title}`,clearInterval(n)}},1e3)},L=`/*
+</svg>`,n.style.marginLeft="10px",n.style.cursor="pointer",n.style.textDecoration="underline",n.addEventListener("click",function(a){a.preventDefault(),navigator.clipboard.writeText(e.textContent??"").then(()=>{console.log("Copied: "+e.textContent)}).catch(t=>{console.error("Failed to copy: ",t)})}),(o=e.parentNode)==null||o.appendChild(n)})},i="lock-merge",h=()=>{const e=document.createElement("input");e.type="checkbox",e.id="lock-merge",document.body.appendChild(e),localStorage.getItem(i)==="checked"&&(e.checked=!0),e.addEventListener("change",()=>{localStorage.setItem(i,e.checked?"checked":"unchecked")})},c=async e=>new Promise(n=>{const o=setInterval(()=>{const a=document.querySelector(e);a&&(clearInterval(o),n(a))},100)}),d=(...e)=>{console.log("%c[github-extensions]%c","color: #f0db4f; font-weight: bold; background: #323330; padding: 2px 5px; border-radius: 3px;","color: #fff; font-weight: normal; background: #323330; padding: 2px 5px; border-radius: 3px;",...e)},u=()=>{const e=document.querySelector('.gh-header-meta .commit-ref:not(:has([href*="master"]))');return e?e.textContent:!1},g=()=>{const e=document.querySelector(".partial-pull-merging-analytics-js section + div");if(!e)return{};const n=document.createElement("div");e.prepend(n),n.classList.add("fs-errors");const o=document.createElement("div");return e.prepend(o),o.classList.add("fs-messages"),{errors:n,messages:o}},f=e=>{const n=document.createElement("span");return n.classList.add("fs-message"),n.innerHTML=e,n},p=()=>{const e=u();if(e)return f(`<a href='https://github.com/simplicate-software/frontend/actions?query=branch:${e}'>Actions of this PR</a>`)},b=()=>{const{messages:e}=g();if(!e)return;const n=p();n&&e.append(n)},y=()=>{b()},v=()=>document.querySelector(".gh-header-meta [title='Status: Merged']")?"merged":document.querySelector("[reviewable_state='draft']")?"draft":document.querySelector("[data-name*='QA-Test'], [data-name*='qa-test']")?"test":!1,w=()=>{let e=!1;const n=setInterval(()=>{const o=v();if(e!==o&&o){const a=`[${o.toUpperCase()}]`;e=!!o;const t=document.querySelector("h1 > bdi");t&&(t.innerHTML=`${a} ${t.innerHTML}`),document.title=`${a} ${document.title}`,clearInterval(n)}},1e3)},L=`/*
 Comments:
 - outline:red = not responded
 - outline:orange = responded
@@ -26,11 +26,11 @@ page:
 */
 
 :root {
-  --f-purple: rgb(167, 48, 161);
+  --f-merge: rgb(167, 48, 161);
   --f-red: rgb(231, 12, 8);
   --f-orange: rgb(236, 164, 6);
   --f-green: rgb(21, 194, 56);
-  --f-purple-border: rgb(141, 78, 138);
+  --f-merge-border: rgb(141, 78, 138);
   --f-red-border: rgb(168, 43, 41);
   --f-orange-border: rgb(210 153 34);
   --f-green-border: rgb(35 134 54);
@@ -86,7 +86,7 @@ page:
 
 /* outline the tag button with red */
 [reviewable_state="draft"] {
-  outline: 1rem solid var(--f-purple);
+  outline: 1rem solid var(--f-merge);
 }
 
 /* 
@@ -213,4 +213,4 @@ body:not(
   ) {
   --error: "This is not your PR to merge!";
 }
-`,l=document.createElement("style");l.innerHTML=L;document.head.appendChild(l);const x=async()=>{d("github loaded"),u(),w(),m()};c(".timeline-comment-group").then(x);const E=async()=>{d("pipeline loaded"),y()};c("[class*='MergeBoxSectionHeader-module__wrapper']").then(E);
+`,l=document.createElement("style");l.innerHTML=L;document.head.appendChild(l);const x=async()=>{d("github loaded"),h(),w(),m()};c(".timeline-comment-group").then(x);const E=async()=>{d("pipeline loaded"),y()};c("[class*='MergeBoxSectionHeader-module__wrapper']").then(E);
