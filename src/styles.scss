@@ -156,8 +156,8 @@ relative-time:after {
 .fs-errors:before,
 .fs-error,
 .fs-message {
-  --message-background: var(--f-info-border);
-  --message-border: var(--f-info);
+  --background: var(--f-info-border);
+  --border: var(--f-info);
   content: var(--message);
   padding: 8px;
   background-color: var(--f-info-border);
@@ -176,8 +176,8 @@ relative-time:after {
 .fs-errors:before,
 .fs-error {
   content: var(--error);
-  background-color: var(--f-error-border);
-  border-left: 8px solid var(--f-error);
+  --background: var(--f-error-border);
+  --border: var(--f-error);
 }
 
 body:has(#lock-merge:checked) {
