@@ -196,7 +196,7 @@ body:has([title*="fixup!"]) {
   pointer-events: var(--merge-pointer-events);
 }
 
-body:has(.fs-error) [class*="prc-Button-ButtonBase"] {
+body:has(.fs-error) {
   --merge-opacity: 0.2;
   --merge-pointer-events: none;
 }
