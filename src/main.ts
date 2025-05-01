@@ -4,9 +4,8 @@ import {
   loadMessages,
   loadShortcuts,
   loadStatus,
-  log,
-  waitFor,
 } from "./features";
+import { log, waitFor } from "./utils";
 import styles from "./assets/index.scss?inline";
 
 // insert a style

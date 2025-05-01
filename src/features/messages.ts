@@ -1,4 +1,4 @@
-import { getBranch } from "./utils";
+import { getBranch } from "../utils";
 
 const loadHTML = () => {
   const container = document.querySelector(
