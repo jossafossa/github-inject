@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746108809978
-// @description  try to take over the world!
-// @author       You
+// @version      1746108838786
+// @description  Enhance your Github experience with additional features.
+// @author       Jossafossa
 // @match        https://github.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
 // @grant        none
