@@ -197,7 +197,9 @@ body:has(.fs-error) {
 }
 
 @container style(--error) {
-  @include disabled-button;
+  body {
+    @include disabled-button;
+  }
 }
 
 body:not(
