@@ -1,10 +1,13 @@
-import { loadCopy } from "./copy";
-import { loadLockMerge } from "./lockMerge";
-import { loadMessages } from "./messages";
-import { loadShortcuts } from "./shortcuts";
-import { loadStatus } from "./status";
+import {
+  loadCopy,
+  loadLockMerge,
+  loadMessages,
+  loadShortcuts,
+  loadStatus,
+  log,
+  waitFor,
+} from "./features";
 import styles from "./assets/index.scss?inline";
-import { waitFor, log } from "./utils";
 
 // insert a style
 const style = document.createElement("style");
