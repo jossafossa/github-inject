@@ -17,3 +17,11 @@ export const log = (...args: unknown[]) => {
     ...args
   );
 };
+
+export const getBranch = () => {
+  const branch = document.querySelector(
+    '.gh-header-meta .commit-ref:not(:has([href*="master"]))'
+  );
+  if (branch) return branch.textContent;
+  return false;
+};

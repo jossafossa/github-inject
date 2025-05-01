@@ -150,22 +150,31 @@ relative-time:after {
 -- MESSAGES --
 */
 
-.fs-messages:before {
+.fs-messages:before,
+.fs-errors:before,
+.fs-error,
+.fs-message {
   content: var(--message);
   padding: 8px;
-  background-color: var(--f-red-border);
+  background-color: var(--f-orange-border);
   color: white;
   border-radius: 4px;
   margin-bottom: 1rem;
   display: flex;
 }
 
+.fs-errors:before,
+.fs-error {
+  content: var(--error);
+  background-color: var(--f-red-border);
+}
+
 body:has(#lock-merge:checked) {
-  --message: "Merging is blocked";
+  --error: "Merging is blocked";
 }
 
 body:has([title*="fixup!"]) {
-  --message: "Please rebase fixups before merging";
+  --error: "Please rebase fixups before merging";
 }
 
 body:has(#lock-merge:checked),
