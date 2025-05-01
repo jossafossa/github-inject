@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746102953097
+// @version      1746103006140
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -206,6 +206,6 @@ body:has([title*="fixup!"]) {
 body:not(
     body:has(.js-discussion > .TimelineItem:nth-child(1) [alt*="joosthobma"])
   ) {
-  --message: "This is not your PR to merge!";
+  --error: "This is not your PR to merge!";
 }
 `,l=document.createElement("style");l.innerHTML=L;document.head.appendChild(l);const x=async()=>{d("github loaded"),u(),w(),m()};c(".timeline-comment-group").then(x);const E=async()=>{d("pipeline loaded"),y()};c("[class*='MergeBoxSectionHeader-module__wrapper']").then(E);
