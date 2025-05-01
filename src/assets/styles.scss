@@ -64,14 +64,6 @@ $test_labels: "QA-Test", "qa-test" !default;
   --comment-outline-color: var(--f-positive-border);
 }
 
-/* 
--- DRAFT BUTTON COLOR --
-*/
-
-/* outline the tag button with red */
-[reviewable_state="draft"] {
-  outline: 1rem solid var(--f-merge);
-}
 @use "borders";
 @use "misc";
 @use "lockMerge";
