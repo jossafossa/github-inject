@@ -224,14 +224,18 @@ body:not(
 
 [data-shortcut-label] {
   &:after {
+    --background: rgba(255, 255, 255, 0.1);
     content: attr(data-shortcut-label);
     font-size: 0.8rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    outline: 4px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--backgorund);
+    outline: 4px solid var(--backgorund);
     color: rgba(255, 255, 255, 0.8);
     margin-left: 0.5rem;
     font-weight: bold;
     text-decoration: none;
     border-radius: 1px;
   }
+}
+
+.fs-copied {
 }
