@@ -150,7 +150,7 @@ relative-time:after {
 -- MESSAGES --
 */
 
-.partial-pull-merging-analytics-js section + div:before {
+#fs-messages:before {
   content: var(--message);
   padding: 8px;
   background-color: var(--f-red-border);

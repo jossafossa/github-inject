@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github test
 // @namespace    http://tampermonkey.net/
-// @version      1746101115352
+// @version      1746101171590
 // @description  try to take over the world!
 // @author       You
 // @match        https://github.com/*
@@ -165,7 +165,7 @@ relative-time:after {
 -- MESSAGES --
 */
 
-.partial-pull-merging-analytics-js section + div:before {
+#fs-messages:before {
   content: var(--message);
   padding: 8px;
   background-color: var(--f-red-border);
