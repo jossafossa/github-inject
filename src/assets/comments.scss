@@ -22,12 +22,9 @@
 }
 
 /* set the comment to orange when I commented last */
-:where(
-    .review-thread-component:has(
-        .js-comments-holder
-          > div:nth-last-child(1)
-          img[src*="#{env.$my_user_id}"]
-      )
+
+.review-thread-component:has(
+    .js-comments-holder > div:nth-last-child(1) img[src*="#{env.$my_user_id}"]
   ) {
   --comment-outline: 2px solid var(--f-warning-border);
   transition: 0.15s ease;
