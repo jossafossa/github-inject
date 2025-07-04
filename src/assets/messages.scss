@@ -19,9 +19,12 @@
   border-left: 8px solid var(--border);
 }
 
-:where(.fs-message, .fs-error) a {
-  color: inherit;
-  text-decoration: underline;
+.fs-message,
+.fs-error {
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 .fs-errors:before,
