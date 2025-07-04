@@ -31,15 +31,12 @@
 }
 
 /* gray out the comment and mark it green when i commented last with a commit hash */
-:where(
-    .review-thread-component:has(
-        .js-comments-holder
-          > div:nth-last-child(1)
-          img[src*="#{env.$my_user_id}"]
-      ):has(
-        .js-comments-holder > div:nth-last-child(1) .commit-link,
-        [href*="/compare/"]
-      )
+
+.review-thread-component:has(
+    .js-comments-holder > div:nth-last-child(1) img[src*="#{env.$my_user_id}"]
+  ):has(
+    .js-comments-holder > div:nth-last-child(1) .commit-link,
+    [href*="/compare/"]
   ) {
   --comment-outline-color: var(--f-positive-border);
   --comment-opacity: 0.5;
