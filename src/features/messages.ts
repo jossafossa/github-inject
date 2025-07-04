@@ -10,12 +10,12 @@ const loadHTML = () => {
   const errors = document.createElement("div");
   container.prepend(errors);
 
-  errors.classList.add("fs-errors");
+  errors.id = "fs-errors";
 
   const messages = document.createElement("div");
   container.prepend(messages);
 
-  messages.classList.add("fs-messages");
+  messages.id = "fs-messages";
 
   return {
     errors,
