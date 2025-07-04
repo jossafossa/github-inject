@@ -1,7 +1,7 @@
 @use "variables"; // not slow
 @use "comments"; // not slow
 @use "borders"; // not slow
-@use "misc";
+@use "misc"; // not slow
 @use "lockMerge";
 // @use "messages";
-@use "shortcuts";
+@use "shortcuts"; // not slow
