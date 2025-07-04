@@ -34,13 +34,13 @@
   --border: var(--f-error);
 }
 
-body:has(#lock-merge:checked) {
-  --error: "Merging is blocked!";
-}
+// body:has(#lock-merge:checked) {
+//   --error: "Merging is blocked!";
+// }
 
-body:has([title*="fixup!"]) {
-  --error: "Please rebase fixups before merging!";
-}
+// body:has([title*="fixup!"]) {
+//   --error: "Please rebase fixups before merging!";
+// }
 
 @mixin disabled-button {
   .fs-errors + div {
