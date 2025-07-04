@@ -53,7 +53,7 @@ body:has([title*="fixup!"]) {
 }
 
 // this is slow?
-body:has(.fs-error) {
+body:has(#fs-errors .fs-error) {
   @include disabled-button;
 }
 
