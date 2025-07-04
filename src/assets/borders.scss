@@ -3,7 +3,7 @@
 -- BODY BORDER COLOR --
 */
 
-:where(body) {
+body {
   --body-color: transparent;
   border-left: 1rem solid var(--body-color) !important;
 }
@@ -13,26 +13,26 @@
   --body-color: var(--f-warning);
 }
 @each $test_label in env.$test_labels {
-  :where(body:has(.discussion-sidebar-item [data-name*="#{$test_label}"])) {
+  body:has(.discussion-sidebar-item [data-name*="#{$test_label}"]) {
     @extend %test-label-body-style;
   }
 }
 
 /* The body color is green when a tester left a comment  */
-:where(body:has(.author[href*="#{env.$test_username}"])) {
+body:has(.author[href*="#{env.$test_username}"]) {
   --body-color: var(--f-positive);
 }
 
 /* The body color is red when the PR is in draft */
-:where(body:has([reviewable_state="draft"])) {
+body:has([reviewable_state="draft"]) {
   --body-color: var(--f-error);
 }
 
 /* The body color is red when the PR has pipeline issues */
-:where(body:has(.merge-status-item .color-fg-danger)) {
+body:has(.merge-status-item .color-fg-danger) {
   --body-color: var(--f-error);
 }
 
-:where(body:has(.State--merged)) {
+body:has(.State--merged) {
   --body-color: var(--f-merge);
 }
