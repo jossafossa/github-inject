@@ -59,12 +59,12 @@ body:has(.fs-error) {
   }
 }
 
-body:not(
-    body:has(
-        .js-discussion
-          > .TimelineItem:nth-child(1)
-          [alt*="#{env.$my_user_name}"]
-      )
-  ) {
-  --error: "This is not your PR to merge!";
-}
+// body:not(
+//     body:has(
+//         .js-discussion
+//           > .TimelineItem:nth-child(1)
+//           [alt*="#{env.$my_user_name}"]
+//       )
+//   ) {
+//   --error: "This is not your PR to merge!";
+// }
