@@ -4,7 +4,7 @@
 */
 
 .fs-messages:before,
-.fs-errors:before,
+#fs-errors:before,
 .fs-error,
 .fs-message {
   --background: var(--f-info-border);
@@ -27,7 +27,7 @@
   }
 }
 
-.fs-errors:before,
+#fs-errors:before,
 .fs-error {
   content: var(--error);
   --background: var(--f-error-border);
@@ -43,7 +43,7 @@ body:has([title*="fixup!"]) {
 }
 
 @mixin disabled-button {
-  .fs-errors + div {
+  #fs-errors + div {
     [class*="prc-Button-ButtonBase"] {
       opacity: 0.2;
       pointer-events: none;
