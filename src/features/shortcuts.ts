@@ -20,6 +20,7 @@ const copyText = (
         el.classList.remove("fs-copied");
       }, 500);
     });
+
     navigator.clipboard
       .writeText(text)
       .then(() => {
