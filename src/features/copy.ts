@@ -19,7 +19,7 @@ const createCopyLink = (anchor: HTMLAnchorElement) => {
     navigator.clipboard
       .writeText(anchor.textContent ?? "")
       .then(() => {
-        copyLink.textContent = checkIcon;
+        copyLink.innerHTML = checkIcon;
         setTimeout(() => {
           copyLink.innerHTML = copyIcon;
         }, 500);
