@@ -19,7 +19,7 @@ const createCopyLink = (anchor: HTMLAnchorElement) => {
         setTimeout(() => {
           copyLink.textContent = content;
         }, 2000);
-        console.log("Copied: " + anchor.textContent);
+        console.log("Copied: " + copyLink.textContent);
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
