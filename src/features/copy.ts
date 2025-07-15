@@ -32,6 +32,9 @@ export const loadCopy = () => {
   summaryAnchors.forEach((element) =>
     createCopyLink(element as HTMLAnchorElement)
   );
+  if (summaryAnchors.length === 0) {
+    console.warn("No summary anchors found for copy links.");
+  }
 
   const commitHashes = document.querySelectorAll(
     ".js-details-container .AvatarStack ~ div:nth-last-child(1) a[href*='/commits/']"
@@ -39,4 +42,7 @@ export const loadCopy = () => {
   commitHashes.forEach((element) =>
     createCopyLink(element as HTMLAnchorElement)
   );
+  if (commitHashes.length === 0) {
+    console.warn("No commit hashes found for copy links.");
+  }
 };
