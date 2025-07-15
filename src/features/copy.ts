@@ -14,6 +14,10 @@ const createCopyLink = (anchor: HTMLAnchorElement) => {
     navigator.clipboard
       .writeText(anchor.textContent ?? "")
       .then(() => {
+        copyLink.textContent = "Copied!";
+        setTimeout(() => {
+          copyLink.textContent = "";
+        }, 2000);
         console.log("Copied: " + anchor.textContent);
       })
       .catch((err) => {
