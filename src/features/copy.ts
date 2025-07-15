@@ -30,6 +30,6 @@ export const loadCopy = () => {
     .querySelectorAll("details-collapsible summary a")
     .forEach((element) => createCopyLink(element as HTMLAnchorElement));
   document
-    .querySelectorAll("details-collapsible summary a")
+    .querySelectorAll("a[href*='/commits/']")
     .forEach((element) => createCopyLink(element as HTMLAnchorElement));
 };
