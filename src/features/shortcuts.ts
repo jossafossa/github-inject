@@ -14,7 +14,6 @@ const copyText = (
   if (element) {
     const text = callback(element as HTMLElement);
     element.classList.add("fs-copied");
-    element;
     setTimeout(() => {
       element.classList.remove("fs-copied");
     }, 2000);
