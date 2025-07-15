@@ -54,7 +54,7 @@ const setupCopy = ({
 export const loadShortcuts = () => {
   setupCopy({
     url: "github.com",
-    selector: "clipboard-copy",
+    selector: "#partial-discussion-header clipboard-copy",
     shortcut: (event) =>
       event.metaKey && event.shiftKey && event.code === "KeyA",
     shortcutLabel: "⌘⇧A",
