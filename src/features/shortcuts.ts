@@ -16,7 +16,7 @@ const copyText = (
     element.classList.add("fs-copied");
     setTimeout(() => {
       element.classList.remove("fs-copied");
-    }, 2000);
+    }, 500);
     navigator.clipboard
       .writeText(text)
       .then(() => {
