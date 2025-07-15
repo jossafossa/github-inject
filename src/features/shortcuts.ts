@@ -11,12 +11,15 @@ const copyText = (
   callback: (element: HTMLElement) => string
 ) => {
   const element = document.querySelector(selector);
+  const elements = document.querySelectorAll(selector);
   if (element) {
     const text = callback(element as HTMLElement);
-    element.classList.add("fs-copied");
-    setTimeout(() => {
-      element.classList.remove("fs-copied");
-    }, 500);
+    elements.forEach((el) => {
+      el.classList.add("fs-copied");
+      setTimeout(() => {
+        el.classList.remove("fs-copied");
+      }, 500);
+    });
     navigator.clipboard
       .writeText(text)
       .then(() => {
