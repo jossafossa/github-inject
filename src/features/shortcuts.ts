@@ -11,9 +11,9 @@ const copyText = (
   callback: (element: HTMLElement) => string
 ) => {
   const element = document.querySelector(selector);
-  const elements = document.querySelectorAll(selector);
   if (element) {
     const text = callback(element as HTMLElement);
+    const elements = document.querySelectorAll(selector);
     elements.forEach((el) => {
       el.classList.add("fs-copied");
       setTimeout(() => {
