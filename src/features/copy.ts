@@ -26,10 +26,17 @@ const createCopyLink = (anchor: HTMLAnchorElement) => {
 };
 
 export const loadCopy = () => {
-  document
-    .querySelectorAll("details-collapsible summary a")
-    .forEach((element) => createCopyLink(element as HTMLAnchorElement));
-  document
-    .querySelectorAll("a[href*='/commits/']")
-    .forEach((element) => createCopyLink(element as HTMLAnchorElement));
+  const summaryAnchors = document.querySelectorAll(
+    "details-collapsible summary a"
+  );
+  summaryAnchors.forEach((element) =>
+    createCopyLink(element as HTMLAnchorElement)
+  );
+
+  const commitHashes = document.querySelectorAll(
+    ".js-details-container .AvatarStack ~ div:nth-last-child(1) a[href*='/commits/']"
+  );
+  commitHashes.forEach((element) =>
+    createCopyLink(element as HTMLAnchorElement)
+  );
 };
