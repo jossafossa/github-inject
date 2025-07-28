@@ -29,7 +29,7 @@ export const actionStats = () => {
 
   const labels = [
     ...actions.querySelectorAll(
-      "> * > .d-table-cell:last-child .issue-keyword"
+      ":scope > * > .d-table-cell:last-child .issue-keyword"
     ),
   ].map((e) => e.textContent as string);
 
