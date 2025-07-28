@@ -1,5 +1,6 @@
 .action-time  {
+    display:flex;
+    justify-content: flex-end;
     list-style:none;
-    margin-left: auto;
-    margin-inline: 1rem;
+    padding-block: 1rem;
 }
