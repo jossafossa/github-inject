@@ -65,5 +65,12 @@ export const actionStats = () => {
 
   const secondsLabel = convertFromSeconds(seconds);
 
+  document
+    .querySelector(".paginate-container")
+    ?.previousElementSibling?.insertAdjacentHTML(
+      "afterend",
+      `<div class="Box-row">Total time: ${secondsLabel}</div>`
+    );
+
   console.log({ labels, seconds, secondsLabel });
 };
