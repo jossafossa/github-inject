@@ -40,12 +40,11 @@ function convertFromSeconds(totalSeconds: number) {
     result += `${days}d `;
   }
   if (hours > 0 || days > 0) {
-    // Show hours if there are any, or if there are days (for consistency)
     result += `${hours}h `;
   }
   result += `${minutes}m ${seconds}s`;
 
-  return result.trim(); // Trim any trailing space if days/hours are not present
+  return result.trim();
 }
 
 export const actionStats = () => {
