@@ -31,7 +31,7 @@ export const actionStats = () => {
     ...actions.querySelectorAll(
       ".Box-row > * > .d-table-cell:last-child .issue-keyword"
     ),
-  ].map((e) => e.textContent as string);
+  ].map((e) => (e as HTMLElement).innerText as string);
 
   const seconds = labels.map(convertToSeconds);
 
