@@ -22,10 +22,30 @@ function convertToSeconds(timeString: string) {
 }
 
 function convertFromSeconds(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
+  const secondsInMinute = 60;
+  const secondsInHour = 60 * secondsInMinute;
+  const secondsInDay = 24 * secondsInHour;
 
-  return `${minutes}m ${seconds}s`;
+  const days = Math.floor(totalSeconds / secondsInDay);
+  let remainingSeconds = totalSeconds % secondsInDay;
+
+  const hours = Math.floor(remainingSeconds / secondsInHour);
+  remainingSeconds %= secondsInHour;
+
+  const minutes = Math.floor(remainingSeconds / secondsInMinute);
+  const seconds = remainingSeconds % secondsInMinute;
+
+  let result = "";
+  if (days > 0) {
+    result += `${days}d `;
+  }
+  if (hours > 0 || days > 0) {
+    // Show hours if there are any, or if there are days (for consistency)
+    result += `${hours}h `;
+  }
+  result += `${minutes}m ${seconds}s`;
+
+  return result.trim(); // Trim any trailing space if days/hours are not present
 }
 
 export const actionStats = () => {
