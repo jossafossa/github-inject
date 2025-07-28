@@ -21,6 +21,13 @@ function convertToSeconds(timeString: string) {
   return minutes * 60 + seconds;
 }
 
+function convertFromSeconds(totalSeconds: number) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${minutes}m ${seconds}s`;
+}
+
 export const actionStats = () => {
   const actions = document.querySelector("#partial-actions-workflow-runs");
   if (!actions) {
@@ -33,7 +40,11 @@ export const actionStats = () => {
     ),
   ].map((e) => (e as HTMLElement).innerText as string);
 
-  const seconds = labels.map(convertToSeconds);
+  const seconds = labels
+    .map(convertToSeconds)
+    .reduce((acc, cur) => acc + cur, 0);
 
-  console.log({ labels, seconds });
+  const secondsLabel = convertFromSeconds(seconds);
+
+  console.log({ labels, seconds, secondsLabel });
 };
